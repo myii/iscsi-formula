@@ -8,6 +8,9 @@ driver:
   privileged: true
   run_command: /lib/systemd/systemd
 
+# Using the commit title as a comment to guarantee change for new commit/push:
+# ci: test for upstream Salt regressions in '`'master'`' instances (2020-W43a)
+
 # Make sure the platforms listed below match up with
 # the `env.matrix` instances defined in `.travis.yml`
 platforms:
@@ -15,24 +18,38 @@ platforms:
   - name: debian-10-master-py3
     driver:
       image: saltimages/salt-master-py3:debian-10
+      provision_command:
+        - sed -i -e "s/^\(    \)\(_generate_sls_context(tmplpath, sls)\)$/\1return \2/" "$(find /opt/ /usr/ -type f -name templates.py | grep 'salt/utils/templates.py')"
   - name: ubuntu-2004-master-py3
     driver:
       image: saltimages/salt-master-py3:ubuntu-20.04
+      provision_command:
+        - sed -i -e "s/^\(    \)\(_generate_sls_context(tmplpath, sls)\)$/\1return \2/" "$(find /opt/ /usr/ -type f -name templates.py | grep 'salt/utils/templates.py')"
   - name: ubuntu-1804-master-py3
     driver:
       image: saltimages/salt-master-py3:ubuntu-18.04
+      provision_command:
+        - sed -i -e "s/^\(    \)\(_generate_sls_context(tmplpath, sls)\)$/\1return \2/" "$(find /opt/ /usr/ -type f -name templates.py | grep 'salt/utils/templates.py')"
   - name: centos-8-master-py3
     driver:
       image: saltimages/salt-master-py3:centos-8
+      provision_command:
+        - sed -i -e "s/^\(    \)\(_generate_sls_context(tmplpath, sls)\)$/\1return \2/" "$(find /opt/ /usr/ -type f -name templates.py | grep 'salt/utils/templates.py')"
   - name: fedora-32-master-py3
     driver:
       image: saltimages/salt-master-py3:fedora-32
+      provision_command:
+        - sed -i -e "s/^\(    \)\(_generate_sls_context(tmplpath, sls)\)$/\1return \2/" "$(find /opt/ /usr/ -type f -name templates.py | grep 'salt/utils/templates.py')"
   - name: fedora-31-master-py3
     driver:
       image: saltimages/salt-master-py3:fedora-31
+      provision_command:
+        - sed -i -e "s/^\(    \)\(_generate_sls_context(tmplpath, sls)\)$/\1return \2/" "$(find /opt/ /usr/ -type f -name templates.py | grep 'salt/utils/templates.py')"
   - name: opensuse-leap-152-master-py3
     driver:
       image: saltimages/salt-master-py3:opensuse-leap-15.2
+      provision_command:
+        - sed -i -e "s/^\(    \)\(_generate_sls_context(tmplpath, sls)\)$/\1return \2/" "$(find /opt/ /usr/ -type f -name templates.py | grep 'salt/utils/templates.py')"
       run_command: /usr/lib/systemd/systemd
     # Workaround to avoid intermittent failures on `opensuse-leap-15.2`:
     # => SCP did not finish successfully (255):  (Net::SCP::Error)
@@ -41,6 +58,8 @@ platforms:
   - name: amazonlinux-2-master-py3
     driver:
       image: saltimages/salt-master-py3:amazonlinux-2
+      provision_command:
+        - sed -i -e "s/^\(    \)\(_generate_sls_context(tmplpath, sls)\)$/\1return \2/" "$(find /opt/ /usr/ -type f -name templates.py | grep 'salt/utils/templates.py')"
 
   ## SALT `3000.3`
   - name: debian-10-3000-3-py3
@@ -138,6 +157,9 @@ provisioner:
   salt_copy_filter:
     - .kitchen
     - .git
+  salt_minion_extra_config:
+    features:
+      enable_slsvars_fixes: true
 
 verifier:
   # https://www.inspec.io/
