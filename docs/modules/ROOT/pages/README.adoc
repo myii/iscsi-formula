@@ -41,14 +41,17 @@ to contribute] for more details.
 
 == Available Meta states
 
-`iscsi` ^^^^^^^ _Meta-state (This is a state that includes other
-states)_.
+=== `iscsi`
+
+_Meta-state (This is a state that includes other states)_.
 
 Deploy iSNS, iSCSI initiator, and iSCSI target packages, manage
 configuration files and then starts the associated iscsi services.
 
-`iscsi.target` ^^^^^^^^^^^^^^ Install and configure the iSCSI Target
-service. Supported vendor implementations include-
+=== `iscsi.target`
+
+Install and configure the iSCSI Target service. Supported vendor
+implementations include-
 
 * `/etc/ctl.conf` for `ctld(8)` on FreeBSD
 * `/etc/target/saveconfig.json\` for`LIO`` on GNU/Linux
@@ -66,8 +69,9 @@ The default choice is modifable via the
 [.title-ref]#iscsi.target.provider# pillar value. New providers can be
 introduced via pull request.
 
-`iscsi.target.clean` ^^^^^^^^^^^^^^^^^^^^ _Meta-state (This is a state
-that includes other states)_.
+=== `iscsi.target.clean`
+
+_Meta-state (This is a state that includes other states)_.
 
 this state will undo everything performed in the `iscsi.target`
 meta-state::
@@ -76,15 +80,17 @@ meta-state::
 stops the service, removes the configuration files and then uninstalls
 the package.
 
-`iscsi.initiator` ^^^^^^^^^^^^^^^^^ Install and configure the iSCSI
-initiator service-
+=== `iscsi.initiator`
+
+Install and configure the iSCSI initiator service-
 
 * `/etc/iscsi.conf` for FreeBSD
 * `/etc/iscsi/iscsid.conf` or `~/.iscsid.conf` for `Open iSCSI` on
 GNU/Linux
 
-`iscsi.initiator.clean` ^^^^^^^^^^^^^^^^^^^^^^^ _Meta-state (This is a
-state that includes other states)_.
+=== `iscsi.initiator.clean`
+
+_Meta-state (This is a state that includes other states)_.
 
 this state will undo everything performed in the `iscsi.initiator`::
   meta-state in reverse order, i.e.
@@ -92,10 +98,13 @@ this state will undo everything performed in the `iscsi.initiator`::
 stops the service, removes the configuration files and then uninstalls
 the package.
 
-`iscsi.isns` ^^^^^^^^^^^^ Install and configure iSCSI name service.
+=== `iscsi.isns`
 
-`iscsi.isns.clean` ^^^^^^^^^^^^^^^^^^ _Meta-state (This is a state that
-includes other states)_.
+Install and configure iSCSI name service.
+
+=== `iscsi.isns.clean`
+
+_Meta-state (This is a state that includes other states)_.
 
 this state will undo everything performed in the `iscsi.isns`::
   meta-state in reverse order, i.e.
@@ -105,88 +114,119 @@ the package.
 
 == Available sub-states
 
-`iscsi.target.package` ^^^^^^^^^^^^^^^^^^^^^^ Install iSCSI target
-related packages.
+=== `iscsi.target.package`
 
-`iscsi.target.package.clean` ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Remove iSCSI
-target related packages.
+Install iSCSI target related packages.
 
-`iscsi.target.config` ^^^^^^^^^^^^^^^^^^^^^ Install iSCSI target related
-configuration files.
+=== `iscsi.target.package.clean`
 
-`iscsi.target.config.clean` ^^^^^^^^^^^^^^^^^^^^^^^^^^^ Remove iSCSI
-target related configuration files.
+Remove iSCSI target related packages.
 
-`iscsi.target.kernel` ^^^^^^^^^^^^^^^^^^^^^ Load iSCSI target related
-kernel modules.
+=== `iscsi.target.config`
 
-`iscsi.target.kernel.clean` ^^^^^^^^^^^^^^^^^^^^^^^^^^^ Unload iSCSI
-target related kernel modules.
+Install iSCSI target related configuration files.
 
-`iscsi.target.make` ^^^^^^^^^^^^^^^^^^^ Make iSCSI related packages from
-git source on FreeBSD.
+=== `iscsi.target.config.clean`
 
-`iscsi.target.make.clean` ^^^^^^^^^^^^^^^^^^^^^^^^^ Remove iSCSI related
-package binaries on FreeBSD.
+Remove iSCSI target related configuration files.
 
-`iscsi.target.service` ^^^^^^^^^^^^^^^^^^^^^^ Install iSCSI target
-services.
+=== `iscsi.target.kernel`
 
-`iscsi.target.service.clean` ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Stop and
-disable SCSI target services.
+Load iSCSI target related kernel modules.
 
-`iscsi.initiator.package` ^^^^^^^^^^^^^^^^^^^^^^^^^ Install iSCSI
-initiator related packages.
+=== `iscsi.target.kernel.clean`
 
-`iscsi.initiator.package.clean` ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Remove
-iSCSI initiator related packages.
+Unload iSCSI target related kernel modules.
 
-`iscsi.initiator.config` ^^^^^^^^^^^^^^^^^^^^^^^^ Install iSCSI
-initiator related configuration files.
+=== `iscsi.target.make`
 
-`iscsi.initiator.config.clean` ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Remove
-iSCSI initiator related configuration files.
+Make iSCSI related packages from git source on FreeBSD.
 
-`iscsi.initiator.kernel` ^^^^^^^^^^^^^^^^^^^^^^^^ Load iSCSI initiator
-related kernel modules.
+=== `iscsi.target.make.clean`
 
-`iscsi.initiator.kernel.clean` ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Unload
-iSCSI initiator related kernel modules.
+Remove iSCSI related package binaries on FreeBSD.
 
-`iscsi.initiator.make` ^^^^^^^^^^^^^^^^^^^^^^ Make iSCSI related
-packages from git source for FreeBSD.
+=== `iscsi.target.service`
 
-`iscsi.initiator.make.clean` ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Remove iSCSI
-related package binaries on FreeBSD.
+Install iSCSI target services.
 
-`iscsi.initiator.service` ^^^^^^^^^^^^^^^^^^^^^^^^^ Install iSCSI
-initiator services.
+=== `iscsi.target.service.clean`
 
-`iscsi.initiator.service.clean` ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Stop and
-disable iSCSI initiator services.
+Stop and disable SCSI target services.
 
-`iscsi.isns.package` ^^^^^^^^^^^^^^^^^^^^ Install iSCSI isns packages.
+=== `iscsi.initiator.package`
 
-`iscsi.isns.package.clean` ^^^^^^^^^^^^^^^^^^^^^^^^^^ Remove iSCSI isns
-packages.
+Install iSCSI initiator related packages.
 
-`iscsi.isns.config` ^^^^^^^^^^^^^^^^^^^ Customises iscsi isns
-configuration. Requires `iscsi.isns.package` via include list.
+=== `iscsi.initiator.package.clean`
 
-`iscsi.isns.config.clean` ^^^^^^^^^^^^^^^^^^^^^^^^^ Remove iSCSI isns
-configuration files.
+Remove iSCSI initiator related packages.
 
-`iscsi.isns.make` ^^^^^^^^^^^^^^^^^ This state makes iscsi isns services
-on FreeBSD.
+=== `iscsi.initiator.config`
 
-`iscsi.isns.make.clean` ^^^^^^^^^^^^^^^^^^^^^^^ Removes iSCSI isns
-binaries on FreeBSD.
+Install iSCSI initiator related configuration files.
 
-`iscsi.isns.service` ^^^^^^^^^^^^^^^^^^^^ Start iscsi isns services.
-Requires `iscsi.isns.config` via include list.
+=== `iscsi.initiator.config.clean`
 
-`iscsi.isns.service.clean` ^^^^^^^^^^^^^^^^^^^^^^^^^^ _Meta-state (This
-is a state that includes other states)_.
+Remove iSCSI initiator related configuration files.
+
+=== `iscsi.initiator.kernel`
+
+Load iSCSI initiator related kernel modules.
+
+=== `iscsi.initiator.kernel.clean`
+
+Unload iSCSI initiator related kernel modules.
+
+=== `iscsi.initiator.make`
+
+Make iSCSI related packages from git source for FreeBSD.
+
+=== `iscsi.initiator.make.clean`
+
+Remove iSCSI related package binaries on FreeBSD.
+
+=== `iscsi.initiator.service`
+
+Install iSCSI initiator services.
+
+=== `iscsi.initiator.service.clean`
+
+Stop and disable iSCSI initiator services.
+
+=== `iscsi.isns.package`
+
+Install iSCSI isns packages.
+
+=== `iscsi.isns.package.clean`
+
+Remove iSCSI isns packages.
+
+=== `iscsi.isns.config`
+
+Customises iscsi isns configuration. Requires `iscsi.isns.package` via
+include list.
+
+=== `iscsi.isns.config.clean`
+
+Remove iSCSI isns configuration files.
+
+=== `iscsi.isns.make`
+
+This state makes iscsi isns services on FreeBSD.
+
+=== `iscsi.isns.make.clean`
+
+Removes iSCSI isns binaries on FreeBSD.
+
+=== `iscsi.isns.service`
+
+Start iscsi isns services. Requires `iscsi.isns.config` via include
+list.
+
+=== `iscsi.isns.service.clean`
+
+_Meta-state (This is a state that includes other states)_.
 
 this state will undo everything performed in the `iscsi.isns`
 meta-state::
