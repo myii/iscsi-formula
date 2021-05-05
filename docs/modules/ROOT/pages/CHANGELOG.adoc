@@ -2,40 +2,40 @@
 
 :sectnums!:
 
-= https://github.com/saltstack-formulas/iscsi-formula/compare/v1.1.2...v1.2.0[1.2.0] (2020-06-02)
+== link:++https://github.com/saltstack-formulas/iscsi-formula/compare/v1.1.2...v1.2.0++[1.2.0] (2020-06-02)
 
-== Bug Fixes
+=== Bug Fixes
 
 * *arch:* python-configshell-fb dependency problem
 (https://github.com/saltstack-formulas/iscsi-formula/commit/a2b566ff81e98155ab6edb7022ae1ef65c589342[a2b566f])
 * *arch:* update packages yamls
 (https://github.com/saltstack-formulas/iscsi-formula/commit/88a4ff51d4f33c2cabf7d84694f2d4808a3ee3f6[88a4ff5])
 
-== Code Refactoring
+=== Code Refactoring
 
 * *kitchen:* rename arch pillar file
 (https://github.com/saltstack-formulas/iscsi-formula/commit/141cd9d44c00434d89e59358e9655656f25a7d8d[141cd9d])
 
-== Continuous Integration
+=== Continuous Integration
 
 * *kitchen+travis:* use latest pre-salted images
 (https://github.com/saltstack-formulas/iscsi-formula/commit/e10522d69f55657cf7e7eb0c1f3eb284c799a65f[e10522d])
 * *travis:* add notifications => zulip [skip ci]
 (https://github.com/saltstack-formulas/iscsi-formula/commit/fe742d9f03ac53b65699dcd13b2660ac87c54367[fe742d9])
 
-== Features
+=== Features
 
 * *semantic-release:* standardise for this formula
 (https://github.com/saltstack-formulas/iscsi-formula/commit/5bde2162bef791648895cfdd46c1f0e76c010c89[5bde216])
 
-== Tests
+=== Tests
 
 * *suite:* update travis tests
 (https://github.com/saltstack-formulas/iscsi-formula/commit/3f343853748b2973a41b76862d0b95e379a377cd[3f34385])
 
-= https://github.com/saltstack-formulas/iscsi-formula/compare/v1.1.1...v1.1.2[1.1.2] (2020-05-08)
+== link:++https://github.com/saltstack-formulas/iscsi-formula/compare/v1.1.1...v1.1.2++[1.1.2] (2020-05-08)
 
-== Bug Fixes
+=== Bug Fixes
 
 * *arch:* python-configshell-fb dependency problem
 (https://github.com/saltstack-formulas/iscsi-formula/commit/914c71e15ebefbbdb9b5f1216a6138b8a364a4c1[914c71e])
@@ -45,12 +45,12 @@
  [skip ci]
 (https://github.com/saltstack-formulas/iscsi-formula/commit/1433aad429907ec32c33a966b93a0f92a4662afc[1433aad])
 
-== Code Refactoring
+=== Code Refactoring
 
 * *kitchen:* rename arch pillar file
 (https://github.com/saltstack-formulas/iscsi-formula/commit/aabba21f2047b08d41ce570c971bc8fd81fa3841[aabba21])
 
-== Continuous Integration
+=== Continuous Integration
 
 * *archlinux:* py2 support removed in salt
 (https://github.com/saltstack-formulas/iscsi-formula/commit/f78b48fb61f2025c61a873036a47f29071c37c79[f78b48f])
@@ -65,21 +65,21 @@
 * workaround issues with newly introduced `amazonlinux-1` [skip ci]
 (https://github.com/saltstack-formulas/iscsi-formula/commit/a0c7feca6b882c8b1410ec961f3712796e63e769[a0c7fec])
 
-== Tests
+=== Tests
 
 * *suite:* update travis tests
 (https://github.com/saltstack-formulas/iscsi-formula/commit/29175d30e8ff74e3c7bab82efdcea04808007317[29175d3])
 
-= https://github.com/saltstack-formulas/iscsi-formula/compare/v1.1.0...v1.1.1[1.1.1] (2020-01-12)
+== link:++https://github.com/saltstack-formulas/iscsi-formula/compare/v1.1.0...v1.1.1++[1.1.1] (2020-01-12)
 
-== Bug Fixes
+=== Bug Fixes
 
 * *jinja:* convert the value type properly to json
 (https://github.com/saltstack-formulas/iscsi-formula/commit/e49e5116661d17bc250f5b2a9ae273beda05a53f[e49e511])
 * *release.config.js:* use full commit hash in commit link [skip ci]
 (https://github.com/saltstack-formulas/iscsi-formula/commit/93e410be3751ed88f99515b1df76ac12a4231efd[93e410b])
 
-== Continuous Integration
+=== Continuous Integration
 
 * *gemfile:* restrict `train` gem version until upstream fix [skip ci]
 (https://github.com/saltstack-formulas/iscsi-formula/commit/b279161d1a2b70f5818367d4ca09fd34b5af6b60[b279161])
@@ -106,21 +106,21 @@ ci]
 * *travis:* use build config validation (beta) [skip ci]
 (https://github.com/saltstack-formulas/iscsi-formula/commit/78614cd370688bbad511ed1340758aed3a37953d[78614cd])
 
-== Documentation
+=== Documentation
 
 * *contributing:* remove to use org-level file instead [skip ci]
 (https://github.com/saltstack-formulas/iscsi-formula/commit/06dae861d61dbdc86e3aeec8239557378c8f8101[06dae86])
 * *readme:* update link to `CONTRIBUTING` [skip ci]
 (https://github.com/saltstack-formulas/iscsi-formula/commit/c1b13164d0b244041fc16cff58a8f3b9f3901355[c1b1316])
 
-== Performance Improvements
+=== Performance Improvements
 
 * *travis:* improve `salt-lint` invocation [skip ci]
 (https://github.com/saltstack-formulas/iscsi-formula/commit/a49d41989afbbd880ed050c19d53ff7ae91115d5[a49d419])
 
-= https://github.com/saltstack-formulas/iscsi-formula/compare/v1.0.2...v1.1.0[1.1.0] (2019-10-12)
+== link:++https://github.com/saltstack-formulas/iscsi-formula/compare/v1.0.2...v1.1.0++[1.1.0] (2019-10-12)
 
-== Bug Fixes
+=== Bug Fixes
 
 * *clean.sls:* fix `salt-lint` errors
 (https://github.com/saltstack-formulas/iscsi-formula/commit/f5c57db)
@@ -145,37 +145,37 @@ ci]
 * *tgtd.tmpl:* fix `salt-lint` errors
 (https://github.com/saltstack-formulas/iscsi-formula/commit/cf38af1)
 
-== Features
+=== Features
 
 * *semantic-release:* complete for this formula
 (https://github.com/saltstack-formulas/iscsi-formula/commit/4f27ae9)
 
-= https://github.com/saltstack-formulas/iscsi-formula/compare/v1.0.1...v1.0.2[1.0.2] (2019-10-07)
+== link:++https://github.com/saltstack-formulas/iscsi-formula/compare/v1.0.1...v1.0.2++[1.0.2] (2019-10-07)
 
-== Bug Fixes
+=== Bug Fixes
 
 * *iscsi.conf:* adjust jinja rendering
 (https://github.com/saltstack-formulas/iscsi-formula/commit/98e29d8[98e29d8])
 * *jinja:* fix generated iscsi.conf
 (https://github.com/saltstack-formulas/iscsi-formula/commit/1def94b[1def94b])
 
-== Code Refactoring
+=== Code Refactoring
 
 * *config:* only create conf-file if pillar data
 (https://github.com/saltstack-formulas/iscsi-formula/commit/1645c53[1645c53])
 
-= https://github.com/saltstack-formulas/iscsi-formula/compare/v1.0.0...v1.0.1[1.0.1] (2019-10-05)
+== link:++https://github.com/saltstack-formulas/iscsi-formula/compare/v1.0.0...v1.0.1++[1.0.1] (2019-10-05)
 
-== Documentation
+=== Documentation
 
 * *readme:* fix formatting
 (https://github.com/saltstack-formulas/iscsi-formula/commit/40dd6ef[40dd6ef])
 * *readme:* update scope heading
 (https://github.com/saltstack-formulas/iscsi-formula/commit/840b389[840b389])
 
-= 1.0.0 (2019-10-04)
+== 1.0.0 (2019-10-04)
 
-== Bug Fixes
+=== Bug Fixes
 
 * *arch:* harden jinja for archlinux
 (https://github.com/saltstack-formulas/iscsi-formula/commit/4ec440c[4ec440c])
@@ -209,8 +209,7 @@ ci]
 (https://github.com/saltstack-formulas/iscsi-formula/commit/43b2ad4[43b2ad4])
 * *saltbug:* file.line is buggy; use file.prepend
 (https://github.com/saltstack-formulas/iscsi-formula/commit/f72fe9e[f72fe9e])
-* *saltbug:* fix for strange 'unless: :raw-html-m2r:[.title-ref]#<url>#'
-bug
+* *saltbug:* fix for strange `unless: <url>` bug
 (https://github.com/saltstack-formulas/iscsi-formula/commit/5de113d[5de113d])
 * *service:* only start service if enabled
 (https://github.com/saltstack-formulas/iscsi-formula/commit/b8d8b7f[b8d8b7f])
@@ -231,7 +230,7 @@ bug
 * *ubuntu:* update list of default packages
 (https://github.com/saltstack-formulas/iscsi-formula/commit/bf99361[bf99361])
 
-== Code Refactoring
+=== Code Refactoring
 
 * *formula:* align to template-formula & fix
 https://github.com/saltstack-formulas/iscsi-formula/issues/19[#19]
@@ -239,7 +238,7 @@ https://github.com/saltstack-formulas/iscsi-formula/issues/19[#19]
 * *osmaps:* add osfinger, osmap
 (https://github.com/saltstack-formulas/iscsi-formula/commit/add55e0[add55e0])
 
-== Documentation
+=== Documentation
 
 * *archlinux:* add user to pillar.example
 (https://github.com/saltstack-formulas/iscsi-formula/commit/4b09216[4b09216])
@@ -258,12 +257,12 @@ https://github.com/saltstack-formulas/iscsi-formula/issues/19[#19]
 * *unused:* removing depreciated docs/ files
 (https://github.com/saltstack-formulas/iscsi-formula/commit/118a2d6[118a2d6])
 
-== Features
+=== Features
 
 * *kernel:* advice re kernel upgrades
 (https://github.com/saltstack-formulas/iscsi-formula/commit/77d3625[77d3625])
 
-== Tests
+=== Tests
 
 * *arch/cent:* updated kitchen tests
 (https://github.com/saltstack-formulas/iscsi-formula/commit/d519be1[d519be1])
